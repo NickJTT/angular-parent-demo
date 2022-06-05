@@ -2,9 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <h1>Parent Component</h1>
+    <app-child (greetEvent)='greet($event)'></app-child>
+  `
 })
 export class AppComponent {
-  title = 'angular-parent-demo';
+  public greet(message: string) {
+    alert(message);
+  }
 }
